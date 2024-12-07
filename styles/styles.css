@@ -1,0 +1,536 @@
+/* General Styles */
+/********************************************************/
+
+:root {
+  --background-day: linear-gradient(to bottom, #87ceeb, #1e90ff);
+  --background-night: linear-gradient(to bottom, #2c3e50, #34495e);
+  --button-day-bg: #fff;
+  --button-day-text: #000;
+  --button-night-bg: #000;
+  --button-night-text: #fff;
+  --footer-day: black;
+  --footer-night: white;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--background-day);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  transition: background 1s ease-in-out;
+  animation: dayNightCycle 40s infinite;
+}
+
+/* keyframes for background transitions */
+@keyframes dayNightCycle {
+  0%, 50% {
+    background: var(--background-day);
+  }
+  51%, 100% {
+    background: var(--background-night);
+  }
+}
+
+
+
+/* Header */
+/********************************************************/
+
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  z-index: 100;
+  text-decoration: none;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  transition: top 0.3s ease;
+}
+
+
+/* Make the skip link visible */
+.skip-link:focus {
+  top: 10px;
+}
+
+
+#play-button:focus {
+  outline: 3px solid #ff9800; /* Visible outline when focused */
+  outline-offset: 2px;
+}
+
+
+header h1 {
+  color: white;
+}
+
+.instructions-box h2 {
+  color: var(--text-night);
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+header.moved-up {
+  transform: translateY(-50px);
+}
+
+.animated-text {
+  font-size: 2rem;
+  color: white;
+  animation: text-fade 2s infinite;
+  margin-top: 80px;
+}
+
+@keyframes text-fade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+
+/* Main */
+/********************************************************/
+
+/* Scoreboard and Instructions */
+.scoreboard, .instructions-box {
+  position: absolute;
+  top: 10px;
+  color: black;
+  /* background: rgba(0, 0, 0, 0.5); */
+  background: white;
+  transition: none;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.instructions-box {
+  left: 10px;
+  width: 260px;
+  margin: 20px 0 0 20px;
+}
+
+.scoreboard {
+  right: 10px;
+  text-align: right;
+  margin: 20px 20px 0 0;
+}
+
+.final-score {
+  font-size: 28px;
+}
+
+
+/* Game Area and Ballons*/
+.game-area {
+  display: flex;
+  flex-direction: column;
+  row-gap: 150px;
+}
+
+/* Designsign the ballons using position*/
+.balloon {
+  position: absolute;
+  width: 80px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: pink;
+  animation: floatUp 8s linear infinite;
+  display: none;
+  /* transition: opacity 0.2s ease-in-out; */
+  z-index: 1;
+}
+
+.balloon::before {
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 50px;
+  background-color: white;
+  top: 110px;
+  left: 40px;
+}
+
+.balloon::after {
+  position: absolute;
+  content: '';
+  border-bottom: 12px solid red;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: 109px;
+  left: 31px;
+}
+
+.balloon:nth-child(2) {
+  left: 330px;
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.balloon:nth-child(2)::after {
+  border-bottom: 12px solid blue;
+}
+
+.balloon:nth-child(3) {
+  left: 470px;
+  background-color: rgba(255, 255, 0, 0.5);
+}
+
+.balloon:nth-child(3)::after {
+  border-bottom: 12px solid yellow;
+}
+
+.balloon:nth-child(4) {
+  left: 820px;
+  background-color: rgba(17, 253, 218, 0.5);
+}
+
+.balloon:nth-child(4)::after {
+  border-bottom: 12px solid rgb(49, 229, 25);
+}
+
+.balloon:nth-child(5) {
+  left: 700px;
+  background-color: rgba(17, 253, 218, 0.5);
+}
+
+.balloon:nth-child(5)::after {
+  border-bottom: 12px solid rgb(49, 229, 25);
+}
+
+.balloon:nth-child(6) {
+  left: 930px;
+  background-color: rgba(101, 34, 49, 0.5);
+}
+
+.balloon:nth-child(6)::after {
+  border-bottom: 12px solid rgb(255, 0, 60);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh); /* Start below screen */
+    opacity: 1;
+  }
+  85% {
+    /* transform: translateY(-15vh);  */
+    opacity: 1; 
+  }
+  100% {
+    transform: translateY(-110vh); /* Float completely above screen */
+    opacity: 0; 
+  }
+}
+
+/*Random animation time or the balloons*/
+.balloon:nth-child(1) { 
+  left: 20%; animation-delay: 0s; 
+  animation: floatUp 7s linear infinite;
+}
+
+.balloon:nth-child(2) { 
+  left: 40%; animation-delay: 1s; 
+  animation: floatUp 5s linear infinite;
+}
+
+.balloon:nth-child(3) { 
+  left: 60%; animation-delay: 2s; 
+  animation: floatUp 8s linear infinite;
+}
+
+.balloon:nth-child(4) { 
+  left: 80%; animation-delay: 3s; 
+  animation: floatUp 9s linear infinite;
+}
+
+.balloon:nth-child(5) { 
+  left: 10%; animation-delay: 4s; 
+  animation: floatUp 7.5s linear infinite;
+}
+
+.balloon:nth-child(6) { 
+  left: 70%; animation-delay: 5s; 
+  animation: floatUp 10s linear infinite;
+}
+
+
+/* Play and Reset Buttons */
+.play-button, .reset-button {
+  background: var(--button-day-bg);
+  color: var(--button-day-text);
+  border: 2px solid var(--button-day-text);
+  transition: background 1s ease-in-out, color 1s ease-in-out, border 1s ease-in-out;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 80px;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  z-index: 10; 
+}
+
+
+.hidden {
+  display: none;
+}
+
+.reset-button {
+  background: var(--button-night-bg);
+  color: var(--button-night-text);
+}
+
+
+
+/* Footer */
+/********************************************************/
+
+footer p {
+  color: var(--footer-day);
+  transition: color 1s ease-in-out;
+  animation: footerColorCycle 40s infinite;
+}
+
+
+/* Keyframes for footer text color transitions */
+@keyframes footerColorCycle {
+  0%, 50% {
+    color: var(--footer-day);
+  }
+  51%, 100% {
+    color: var(--footer-night);
+  }
+}
+
+
+
+/* Media Queries */
+/********************************************************/
+
+/* Tablet Screens: 768px and below */
+@media (max-width: 768px) {
+  .animated-text {
+    font-size: 28px;
+    margin-left: 50px;
+  }
+
+  .instructions-box {
+    font-size: 14px; 
+    width: 200px;
+  }
+
+  .scoreboard {
+    font-size: 14px; 
+    width: 120px;
+  }
+
+  .final-score {
+    font-size: 26px;
+  }
+
+  .balloon {
+    width: 70px;
+    height: 100px;
+  }
+
+  .balloon::before {
+    top: 100px;
+    left: 35px;
+  }
+
+  .balloon::after {
+    top: 99px;
+    left: 26px;
+  }
+
+  .play-button, .reset-button {
+    font-size: 14px;
+    padding: 10px 18px;
+    bottom: 70px; 
+  }
+}
+
+
+
+/* Small Tablets and Large Phones: 630px and below */
+@media (max-width: 630px) {
+  .animated-text {
+    font-size: 28px;
+    margin-left: 30px;
+    width: 180px;
+  }
+
+  .instructions-box {
+    font-size: 14px; 
+    width: 180px;
+  }
+
+  .scoreboard {
+    font-size: 14px; 
+    width: 110px;
+  }
+
+  .balloon {
+    width: 60px;
+    height: 90px;
+  }
+
+  .balloon::before {
+    top: 90px;
+    left: 30px;
+  }
+
+  .balloon::after {
+    top: 90px;
+    left: 20px;
+  }
+}
+
+
+
+/* Medium Phones: 510px and below */
+@media (max-width: 510px) {
+  header {
+    width: 200px;
+  }
+
+  .animated-text {
+    font-size: 24px;
+    margin-left: 60px;
+    width: 160px;
+  }
+
+  .instructions-box {
+    font-size: 14px; 
+    width: 170px;
+    margin-left: 10px;
+  }
+
+  .scoreboard {
+    font-size: 14px; 
+    width: 75px;
+    margin-right: 10px;
+  }
+
+  .balloon {
+    width: 50px;
+    height: 80px;
+  }
+
+  .balloon::before {
+    top: 81px;
+    left: 25px;
+  }
+
+  .balloon::after {
+    top: 80px;
+    left: 15px;
+  }
+
+}
+
+
+
+/* Small Phones: 430px and below */
+@media (max-width: 430px) {
+  header {
+    width: 100px;
+  }
+
+  .animated-text {
+    font-size: 22px;
+    margin-left: 25px;
+    width: 100px;
+  }
+
+  .instructions-box {
+    font-size: 12px; 
+    width: 140px;
+    margin-left: 10px;
+  }
+
+  .scoreboard {
+    font-size: 12px; 
+    width: 80px;
+    margin-right: 10px;
+  }
+
+  .final-score {
+    font-size: 20px;
+  }
+
+  .balloon {
+    width: 40px;
+    height: 70px;
+  }
+
+  .balloon::before {
+    top: 71px;
+    left: 20px;
+  }
+
+  .balloon::after {
+    top: 70px;
+    left: 10px;
+  }
+
+}
+
+
+
+/* Extra Small Phones: 320px and below */
+@media (max-width: 320px) {
+  header {
+    width: 80px;
+  }
+
+  .animated-text {
+    font-size: 20px;
+    margin-left: 8px;
+    width: 80px;
+  }
+
+  .instructions-box {
+    font-size: 12px; 
+    width: 80px;
+    margin-left: 10px;
+  }
+
+  .scoreboard {
+    font-size: 12px; 
+    width: 50px;
+    margin-right: 10px;
+  }
+
+  .final-score {
+    margin-top: 100px;
+    font-size: 16px;
+  }
+
+  .balloon {
+    width: 35px;
+    height: 60px;
+  }
+
+  .balloon::before {
+    top: 61px;
+    left: 18px;
+  }
+
+  .balloon::after {
+    top: 60px;
+    left: 8px;
+  }
+
+}

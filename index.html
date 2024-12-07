@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon Pop Game</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+  <a href="#play-button" class="skip-link">Skip to Play Button</a>
+  
+  <header id="header" tabindex="0">
+    <h1 class="animated-text">Balloon Pop Challenge</h1>
+  </header>
+
+  <main>
+    <div id="instructions-box" class="instructions-box hidden">
+      <h2>Rules</h2>
+      <p>
+        Welcome to the game! Your goal is to pop as many balloons as you can 
+        within the time limit. Each popped balloon earns you points. Good luck!
+      </p>
+      <p>Each unpopped balloon will fade once it reaches the top.</p>
+    </div>
+
+    <div id="scoreboard" class="scoreboard hidden">
+      <p>Score: <span id="score">0</span></p>
+      <p>Time Left: <span id="time">60</span> sec</p>
+    </div>
+
+    <div id="game-area" class="game-area">
+      <div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+      </div>
+      <div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+      </div>
+    </div>
+
+    <button id="play-button" class="play-button">Play</button>
+    <button id="reset-button" class="reset-button hidden">Reset</button>
+  </main>
+
+  <footer>
+    <p>Balloon Pop Challenge - Have Fun!</p>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
+
