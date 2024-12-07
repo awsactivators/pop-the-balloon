@@ -444,6 +444,10 @@ footer p {
 
 /* Small Phones: 450px and below */
 @media (max-width: 450px) {
+  body {
+    height: 654px;
+  }
+  
   #play-button, #reset-button {
     margin-bottom: 60px;
   }
