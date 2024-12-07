@@ -445,15 +445,17 @@ footer p {
 /* Small Phones: 450px and below */
 @media (max-width: 450px) {
   body {
-    height: 654px;
+    height: 694px;
+    background: var(--background-day);
+    background-repeat: none;
   }
   
   #play-button, #reset-button {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
   }
 
   footer p{
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
 }
 
@@ -556,14 +558,6 @@ footer p {
   .balloon::after {
     top: 60px;
     left: 8px;
-  }
-
-  #play-button, #reset-button {
-    margin-bottom: 50px;
-  }
-
-  footer p{
-    margin-bottom: 70px;
   }
 
 }
