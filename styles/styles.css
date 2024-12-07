@@ -445,7 +445,7 @@ footer p {
 /* Small Phones: 450px and below */
 @media (max-width: 450px) {
   body {
-    height: 694px;
+    height: 734px;
     background: var(--background-day);
     background-repeat: none;
   }
@@ -455,7 +455,7 @@ footer p {
   }
 
   footer p{
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 }
 
