@@ -469,7 +469,7 @@ footer p {
   }
 
   footer p{
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 }
 
@@ -518,13 +518,9 @@ footer p {
     left: 10px;
   }
 
-  #play-button, #reset-button {
+  /* #play-button, #reset-button {
     margin-bottom: 50px;
-  }
-
-  footer p{
-    margin-bottom: 70px;
-  }
+  } */
 
 }
 
