@@ -318,8 +318,8 @@ footer p {
 /* Media Queries */
 /********************************************************/
 
-/* Tablet Screens: 768px and below */
-@media (max-width: 768px) {
+/* Small Phones: 1200px and below */
+@media (max-width: 1200px) {
   body {
     height: 740px;
     background: var(--background-day);
@@ -331,9 +331,14 @@ footer p {
   }
 
   footer p{
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
+}
 
+
+
+/* Tablet Screens: 768px and below */
+@media (max-width: 768px) {
   .animated-text {
     font-size: 28px;
     margin-left: 50px;
@@ -517,10 +522,6 @@ footer p {
     top: 70px;
     left: 10px;
   }
-
-  /* #play-button, #reset-button {
-    margin-bottom: 50px;
-  } */
 
 }
 
