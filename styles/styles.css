@@ -321,7 +321,7 @@ footer p {
 /* Tablet Screens: 768px and below */
 @media (max-width: 768px) {
   body {
-    height: 736px;
+    height: 740px;
     background: var(--background-day);
     background-repeat: none;
   }
@@ -331,9 +331,9 @@ footer p {
   }
 
   footer p{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
-  
+
   .animated-text {
     font-size: 28px;
     margin-left: 50px;
@@ -459,7 +459,7 @@ footer p {
 /* Small Phones: 450px and below */
 @media (max-width: 450px) {
   body {
-    height: 736px;
+    height: 740px;
     background: var(--background-day);
     background-repeat: none;
   }
@@ -469,7 +469,7 @@ footer p {
   }
 
   footer p{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }
 
